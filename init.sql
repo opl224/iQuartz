@@ -1,4 +1,4 @@
--- init.sql
+
 
 CREATE TABLE IF NOT EXISTS products (
     id SERIAL PRIMARY KEY,
@@ -36,7 +36,6 @@ CREATE TABLE IF NOT EXISTS sales_order_items (
     unit_price INTEGER NOT NULL
 );
 
--- SEED DATA (Sesuai dokumen: 12+ realistic products)
 INSERT INTO products (sku, name, price, stock) VALUES
 ('LAPTOP-001', 'Lenovo IdeaPad Slim 3', 7500000, 10),
 ('LAPTOP-002', 'Asus Vivobook Go 14', 6200000, 15),
