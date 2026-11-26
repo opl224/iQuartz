@@ -1,13 +1,12 @@
 body {
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #ffffff; /* Latar belakang putih total */
+  background-color: #ffffff;
   color: #333333;
   margin: 0;
   padding: 2rem;
 }
 
-/* Kartu Ringkasan Bersih */
 .summary-card {
   border: 1px solid #e5e7eb;
   padding: 1.5rem;
@@ -15,7 +14,6 @@ body {
   background: #fff;
 }
 
-/* Input Field Minimalis */
 .input-field {
   width: 100%;
   border: 1px solid #d1d5db;
@@ -30,9 +28,8 @@ body {
   border-color: #3b82f6;
 }
 
-/* Tombol Sederhana */
 .btn-primary {
-  background-color: #111827; /* Hitam/Abu tua elegan */
+  background-color: #111827;
   color: white;
   padding: 0.7rem 1.5rem;
   border: none;
@@ -46,7 +43,6 @@ body {
   background-color: #374151;
 }
 
-/* Pesan Error & Sukses (Tanpa warna mencolok) */
 .msg-error {
   border: 1px solid #e5e7eb;
   background: #f9fafb;
