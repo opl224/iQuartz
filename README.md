@@ -2,7 +2,7 @@
 
 A lightweight inventory and sales management module built with Go (Gin) and React (Vite). Designed to handle concurrent stock transactions safely.
 
-## 🚀 How to Run
+## How to Run
 
 ### Prerequisites
 
