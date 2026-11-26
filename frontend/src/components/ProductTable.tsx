@@ -9,7 +9,6 @@ const ProductTable = () => {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<"all" | "active" | "inactive">("all");
 
-  // Fungsi untuk format Rupiah
   const formatRupiah = (price: number) => {
     return new Intl.NumberFormat("id-ID", {
       style: "currency",
@@ -18,7 +17,6 @@ const ProductTable = () => {
     }).format(price);
   };
 
-  // Fungsi untuk waktu relatif sederhana
   const timeAgo = (dateString: string | null) => {
     if (!dateString) return "Never";
     const date = new Date(dateString);
@@ -38,10 +36,9 @@ const ProductTable = () => {
         search === "" ? undefined : search,
         1,
         100,
-      ); // Ambil semua untuk filter lokal dulu
+      );
       let data = response.data.data;
 
-      // Filter lokal untuk Active/Inactive
       if (filter === "active") data = data.filter((p) => p.is_active);
       if (filter === "inactive") data = data.filter((p) => !p.is_active);
 
@@ -55,7 +52,7 @@ const ProductTable = () => {
 
   useEffect(() => {
     fetchData();
-  }, [search, filter]); // Re-fetch saat search atau filter berubah
+  }, [search, filter]);
 
   if (loading) return <div className="p-4">Loading products...</div>;
   if (error)
