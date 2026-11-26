@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "/api", // Ganti URL lengkap menjadi relatif
+  baseURL: "/api",
 });
 
 export default api;
