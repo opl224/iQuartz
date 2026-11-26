@@ -7,7 +7,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Struct untuk Item Order agar scanning lebih aman
 type OrderItem struct {
 	SKU       string `json:"sku"`
 	Qty       int    `json:"qty"`
@@ -26,7 +25,6 @@ func CreateOrder(db *sql.DB) gin.HandlerFunc {
 			return
 		}
 
-		// Validasi duplikat SKU
 		skuMap := make(map[string]bool)
 		for _, item := range req.Items {
 			if skuMap[item.SKU] {
