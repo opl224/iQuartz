@@ -14,13 +14,11 @@ func main() {
 	defer db.Close()
 
 	r := gin.Default()
-
-	// --- TAMBAHKAN INI UNTUK CORS ---
+	
 	config := cors.DefaultConfig()
 	config.AllowAllOrigins = true
 	config.AllowHeaders = []string{"Origin", "Content-Type", "Accept"}
 	r.Use(cors.New(config))
-	// --------------------------------
 
 	api := r.Group("/api")
 	{
