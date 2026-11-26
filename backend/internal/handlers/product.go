@@ -9,7 +9,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// Struct untuk Product
 type Product struct {
 	ID             int     `json:"id"`
 	SKU            string  `json:"sku"`
@@ -21,7 +20,6 @@ type Product struct {
 	LastMovementAt *string `json:"last_movement_at"`
 }
 
-// Struct untuk Stock Movement
 type Movement struct {
 	ID        int    `json:"id"`
 	ProductID int    `json:"product_id"`
@@ -31,7 +29,6 @@ type Movement struct {
 	CreatedAt string `json:"created_at"`
 }
 
-// GET /api/products?search=&page=&limit=
 func GetProducts(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		search := c.Query("search")
@@ -94,7 +91,6 @@ func GetProducts(db *sql.DB) gin.HandlerFunc {
 	}
 }
 
-// POST /api/products
 func CreateProduct(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var req struct {
@@ -124,7 +120,6 @@ func CreateProduct(db *sql.DB) gin.HandlerFunc {
 	}
 }
 
-// PUT /api/products/{id}
 func UpdateProduct(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		id := c.Param("id")
@@ -153,7 +148,6 @@ func UpdateProduct(db *sql.DB) gin.HandlerFunc {
 	}
 }
 
-// DELETE /api/products/{id}
 func DeleteProduct(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		id := c.Param("id")
@@ -183,7 +177,6 @@ func DeleteProduct(db *sql.DB) gin.HandlerFunc {
 	}
 }
 
-// POST /api/products/{id}/stock
 func AdjustStock(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		id := c.Param("id")
@@ -246,7 +239,6 @@ func AdjustStock(db *sql.DB) gin.HandlerFunc {
 	}
 }
 
-// GET /api/products/{id}/movements
 func GetMovements(db *sql.DB) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		id := c.Param("id")
