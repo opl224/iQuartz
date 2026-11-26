@@ -29,7 +29,6 @@ func main() {
 		api.POST("/products/:id/stock", handlers.AdjustStock(db))
 		api.GET("/products/:id/movements", handlers.GetMovements(db))
 
-		// Order routes (placeholder)
 		api.POST("/orders", handlers.CreateOrder(db))
 		api.POST("/orders/:id/cancel", handlers.CancelOrder(db))
 		api.GET("/orders/:id", handlers.GetOrder(db))
