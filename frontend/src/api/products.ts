@@ -1,5 +1,5 @@
 import api from "./client";
-import type { Product, ApiResponse } from "../types"; // Tambahkan 'type' di sini
+import type { Product, ApiResponse } from "../types";
 
 export const getProducts = (
   search?: string,
